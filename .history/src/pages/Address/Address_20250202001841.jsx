@@ -36,8 +36,8 @@ export default function Address() {
 
 
   const validationSchema = Yup.object({
-   city: Yup.string().required("City is required").min(3,"Name must be at leaste 3 charachters").max(20, "Name must be at most 20 charachters"),
-   details: Yup.string().required("Location is required").min(3,"Name must be at leaste 3 charachters").max(20, "Name must be at most 20 charachters"),
+   city: Yup.string().required("Name is required").min(3,"Name must be at leaste 3 charachters").max(20, "Name must be at most 20 charachters"),
+   details: Yup.string().required("Name is required").min(3,"Name must be at leaste 3 charachters").max(20, "Name must be at most 20 charachters"),
    phone: Yup.string().required("Phone is required").matches(/^01[0125][0-9]{8}$/, "Invalid number. Use 010, 011, 012, or 015, with 8 digits."),
   }) 
 
