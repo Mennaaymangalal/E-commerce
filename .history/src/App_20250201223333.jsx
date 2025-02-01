@@ -17,8 +17,8 @@ import Address from "./pages/Address/Address";
 import Cart from "./pages/Carts/Carts";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import BrandDetails from "./pages/BrandDetails/BrandDetails";
-import Categories from "./pages/Categories/Categories";
-import CategoriesDetails from "./pages/CategoriesDetails/CategoriesDetails";
+
+import Categories from "./pages/Categories/categories";
 
 
 const queryClient = new QueryClient();

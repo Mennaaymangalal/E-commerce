@@ -11,7 +11,7 @@ export default function Categories() {
     return axios.get("https://ecommerce.routemisr.com/api/v1/categories")
   }
 
-  const {data , isLoading , isError} = useQuery({
+  const {data , isLoading} = useQuery({
     queryKey: ['Categories'],
     queryFn: getAllCategories,
    select: (data)=> data?.data.data
@@ -21,13 +21,7 @@ export default function Categories() {
   if (isLoading){
     return <LoadingScreen/>
   }
-  if (isError) {
-    return (
-      <div className="text-center text-red-500 font-semibold">
-        Failed to load categories. Please try again later.
-      </div>
-    );
-  }
+
   return (
     <>    
    <div className="py-8">

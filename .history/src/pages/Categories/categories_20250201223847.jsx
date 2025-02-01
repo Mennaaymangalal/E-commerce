@@ -11,7 +11,7 @@ export default function Categories() {
     return axios.get("https://ecommerce.routemisr.com/api/v1/categories")
   }
 
-  const {data , isLoading , isError} = useQuery({
+  const {data , isLoading} = useQuery({
     queryKey: ['Categories'],
     queryFn: getAllCategories,
    select: (data)=> data?.data.data
