@@ -60,7 +60,7 @@ export default function Login() {
     <>
          <div className="mt-4 ">
         <form onSubmit={handleSubmit}>
-        <div className="lg:w-2/3 m-auto grid md:grid-cols-2 gap-4">
+        <div className="mdw-2/3 m-auto grid md:grid-cols-2 gap-4">
         <h1 className='text-2xl font-bold'>Login Now</h1>
      
       <Input isInvalid={touched.email && errors.email} errorMessage={errors.email} name='email'value={values.email} onChange={handleChange} onBlur={handleBlur} className='md:col-span-2 w-full'  variant='faded' label="Email" type="email" />

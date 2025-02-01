@@ -52,7 +52,7 @@ export default function Address() {
     <>
          <div className="mt-4 ">
         <form onSubmit={handleSubmit}>
-        <div className="lg:w-2/3 m-auto grid md:grid-cols-2 gap-4">
+        <div className="l w-2/3 m-auto grid md:grid-cols-2 gap-4">
         <h1 className='text-2xl font-bold'>Enter Your Address</h1>
       <Input isInvalid={touched.city && errors.city} errorMessage={errors.city} name='city' value={values.city}  onChange={handleChange} onBlur={handleBlur} className='md:col-span-2' variant='faded' label="City" type="text" />
       <Input isInvalid={touched.details && errors.details} errorMessage={errors.details} name='details' value={values.details}  onChange={handleChange} onBlur={handleBlur} className='md:col-span-2' variant='faded' label="Location" type="text" />    

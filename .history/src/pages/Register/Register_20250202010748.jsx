@@ -54,7 +54,7 @@ export default function Register() {
     <>
          <div className="mt-4 ">
         <form onSubmit={handleSubmit}>
-        <div className="lg:w-2/3 m-auto grid md:grid-cols-2 gap-4">
+        <div className="md:w-2/3 m-auto grid md:grid-cols-2 gap-4">
         <h1 className='text-2xl font-bold'>Register Now</h1>
       <Input isInvalid={touched.name && errors.name} errorMessage={errors.name} name='name' value={values.name}  onChange={handleChange} onBlur={handleBlur} className='md:col-span-2' variant='faded' label="Name" type="text" />
       <Input isInvalid={touched.email && errors.email} errorMessage={errors.email} name='email'value={values.email} onChange={handleChange} onBlur={handleBlur} className='md:col-span-2'  variant='faded' label="Email" type="email" />
