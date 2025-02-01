@@ -1,0 +1,7 @@
+{
+    "reweites":[
+       {
+         "source": "/(.*), "destination": "index.html"
+       }
+    ]
+} 
