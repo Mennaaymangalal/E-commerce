@@ -77,7 +77,7 @@ export default function NavbarComponent() {
 
       <NavbarContent justify="end">
      
-     <div onClick={()=> (setIsDarkMOde(!isDarkMode))} className="flex flex-col justify-end ms-3 sm:ms-6">
+     <div onClick={()=> (setIsDarkMOde(!isDarkMode))} className="flex flex-col justify-end ms-3 sm:ms-">
     <input type="checkbox" name="light-switch" className="light-switch sr-only" />
     <label className="relative cursor-pointer p-2"  htmlFor="light-switch">
         <svg className="dark:hidden" width="16" height="16" xmlns="http://www.w3.org/2000/svg">

@@ -93,10 +93,11 @@ async function Chechout() {
       token:localStorage.getItem("token")
     },
     params:{
-      url:"http://localhost:5173"
+      // url:"http://localhost:5173"
+      url:"https://e-commerce-ecru-eight.vercel.app"
     }
   })
- location.hr(data.session.url)  
+ location.href(data.session.url)  
 }
 
   if(isLoading){
