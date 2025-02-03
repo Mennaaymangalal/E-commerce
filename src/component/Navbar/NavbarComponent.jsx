@@ -121,9 +121,7 @@ export default function NavbarComponent() {
           <NavbarMenuItem  onClick={() => (setIsMenuOpen(false)) } key={`${item}-${index}`}>
             <NavLink
               className="w-full"
-              color={
-                index === 2 ? "primary" : index === menuItems.length - 1 ? "danger" : "foreground"
-              }
+              color={"foreground"}
               to={ item == "Home" ? "/" : "/" + item.toLowerCase() }
               size="lg"
             >
