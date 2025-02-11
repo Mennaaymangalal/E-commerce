@@ -25,7 +25,7 @@ export default function Slider() {
     <div className="max-w-7xl mx-auto pb-6">
       {/* Title */}
       <div className="text-center mb-6">
-        <h1 className="text-3xl font-bold uppercase pt-4">Welcome to our Store</h1>
+        <h1 className="text-3xl font-bold uppercase pt-">Welcome to our Store</h1>
         <p className="text-gray-600 dark:text-gray-400">
          Up to 70% off!
         </p>

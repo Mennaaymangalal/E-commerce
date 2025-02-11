@@ -117,7 +117,7 @@ export default function Product({product , index}) {
            <span className="text-3xl font-bold text-slate-900  dark:text-white">{formatCurrency(product.price)}</span>           
            }
        </p>
-      <div className="flex justify-center items-center mt-1 ">
+      <div className="flex items-center mt-1 ">
       {[1,2,3,4,5].map((rate , index)=>{
        return product.ratingsAverage >= rate ?
        <svg key={index} aria-hidden="true" className="h-5 w-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
