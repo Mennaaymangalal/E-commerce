@@ -50,13 +50,10 @@ export default function NavbarComponent() {
     <>      
      <Navbar isBordered shouldHideOnScroll isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen}>
     <NavbarContent>
-     {  
-        isLogedIn &&
-       <NavbarMenuToggle
-       aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-       className="md:hidden"
-     />
-     }
+      <NavbarMenuToggle
+        aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+        className="md:hidden"
+      />
       <NavbarBrand>      
         <img src={logo} className='-me-4' alt="Logo" height="80" width="80"></img>
         <p className="font-bold text-inherit">FRESHCARD</p>
@@ -118,14 +115,14 @@ export default function NavbarComponent() {
       </NavbarContent>
 
      {
-     isLogedIn && (
-      <NavbarMenu>
+     isLogedIn &&
+     <NavbarMenu>
         {menuItems.map((item, index) => (
-          <NavbarMenuItem onClick={() => setIsMenuOpen(false)} key={`${item}-${index}`}>
+          <NavbarMenuItem  onClick={() => (setIsMenuOpen(false)) } key={`${item}-${index}`}>
             <NavLink
               className="w-full"
               color={"foreground"}
-              to={item === "Home" ? "/" : "/" + item.toLowerCase()}
+              to={ item == "Home" ? "/" : "/" + item.toLowerCase() }
               size="lg"
             >
               {item}
@@ -134,7 +131,7 @@ export default function NavbarComponent() {
         ))}
       </NavbarMenu>
       
-     )}
+      }
     </Navbar>     
     </>
   )

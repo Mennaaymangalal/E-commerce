@@ -50,8 +50,7 @@ export default function NavbarComponent() {
     <>      
      <Navbar isBordered shouldHideOnScroll isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen}>
     <NavbarContent>
-     {  
-        isLogedIn &&
+     {
        <NavbarMenuToggle
        aria-label={isMenuOpen ? "Close menu" : "Open menu"}
        className="md:hidden"
