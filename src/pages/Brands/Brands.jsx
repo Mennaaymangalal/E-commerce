@@ -29,7 +29,7 @@ export default function Brands() {
   <h1 className="text-4xl font-bold mb-8 text-gray-800 dark:text-white text-center">
     Brands
   </h1>
-  <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
     {data?.map((product, index) => (
       <div key={index} className="bg-white text-gray-800 rounded-lg shadow-md overflow-hidden">
         {/* Image Section */}

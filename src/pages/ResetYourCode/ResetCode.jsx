@@ -56,7 +56,7 @@ export default function ResetCode() {
             <Input isInvalid={touched.resetCode && errors.resetCode} errorMessage={errors.resetCode} name='resetCode' value={values.resetCode} onChange={handleChange} onBlur={handleBlur} className='md:col-span-2 w-full'  variant='faded' label="Reset code sent to your email" type="text" />
                      
             <Button disabled={isLoading} isLoading={isLoading} type='submit' className='my-2 md:col-span-2' color="primary">
-            Reset Your Code
+           Confim
           </Button>   
           {errMessage && <p className='text-red-500 text-small'>{errMessage}</p>}
           </div>         

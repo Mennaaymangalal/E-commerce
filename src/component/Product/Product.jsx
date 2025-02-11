@@ -9,6 +9,7 @@ import addProuctToCart from '../../Services/cartServices'
 
 
 
+
 export default function Product({product , index}) {
   const [isLoading , setIsLoading] = useState(false)
 
@@ -66,6 +67,7 @@ export default function Product({product , index}) {
  
   return (
     <>
+      
        <div key={index} className="relative m-5 flex w-full  flex-col overflow-hidden rounded-lg border border-gray-100 dark:bg-slate-900 dark:border-slate-950 bg-white shadow-md">
        <Link className="relative mx-3 mt-3 flex  overflow-hidden rounded-xl" to={"/productDetails/" + product._id}>
        <img className="object-contain w-full " src={product.imageCover} alt={product.title} />

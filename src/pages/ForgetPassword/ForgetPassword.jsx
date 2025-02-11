@@ -52,12 +52,12 @@ export default function ForgetPassword() {
        <div className="mt-4 py-6">
               <form onSubmit={handleSubmit}>
               <div className="lg:w-2/3 m-auto grid md:grid-cols-2 gap-4">
-              <h1 className='text-2xl font-bold'>Reset Your Email</h1>
+              <h1 className='text-2xl font-bold'>Reset Your Password</h1>
            
             <Input isInvalid={touched.email && errors.email} errorMessage={errors.email} name='email'value={values.email} onChange={handleChange} onBlur={handleBlur} className='md:col-span-2 w-full'  variant='faded' label="Reset Your Email" type="email" />
                      
             <Button disabled={isLoading} isLoading={isLoading} type='submit' className='my-2 md:col-span-2' color="primary">
-            Reset Your Email
+            Reset Your Password
           </Button>   
           {errMessage && <p className='text-red-500 text-small'>{errMessage}</p>}
           </div>         
