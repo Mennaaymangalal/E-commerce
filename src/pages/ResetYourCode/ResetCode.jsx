@@ -48,7 +48,7 @@ export default function ResetCode() {
       
   return (
     <>
-       <div className="mt-4 ">
+       <div className="mt-4 py-6">
               <form onSubmit={handleSubmit}>
               <div className="lg:w-2/3 m-auto grid md:grid-cols-2 gap-4">
               <h1 className='text-2xl font-bold'>Enter Your reset Code</h1>
