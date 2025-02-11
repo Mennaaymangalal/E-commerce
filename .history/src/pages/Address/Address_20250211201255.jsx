@@ -21,7 +21,7 @@ export default function Address() {
         token:localStorage.getItem("token")
       },
       params:{
-        url:"https://e-commerce-ecru-eight.vercel.app"
+        url:"http://localhost:5173"
       }
     })
     setIsLoading(false)
