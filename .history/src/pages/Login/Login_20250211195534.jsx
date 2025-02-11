@@ -78,7 +78,7 @@ export default function Login() {
      <div className=" flex md:flex-row justify-around align-middle sm:flex-col">
      
      <p className='text-sm'>Don't have an account? <a href='#' onClick={signup} className='text-blue-600 underline dark:text-blue-500 '>Signup</a></p>
-     <a href='#' onClick={forgetpassword} className=' underline dark:text-white text-sm '> Forget Password?</a>
+     <a href='#' onClick={forgetpassword} className='text-black underline dark:text-white text-sm '> Forget Password?</a>
      </div>
         </form>
       </div>
