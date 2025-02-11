@@ -1,0 +1,113 @@
+import React, { useState } from 'react';
+import { Input, Button } from "@heroui/react";
+import { useFormik } from 'formik';
+import * as Yup from "yup";
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+
+export default function ResetPassword() {
+  const [isLoading, setIsLoading] = useState(false);
+  const [errMessage, setErrMessage] = useState("");
+  const navigate = useNavigate();
+
+  // ✅ Retrieve resetCode from localStorage
+  const resetCode = localStorage.getItem("resetCode");
+
+  const initialValues = {      
+    email: "",  
+    newPassword: "", 
+  };
+
+  async function onSubmit(values) {    
+    setIsLoading(true);
+
+    try {
+      const { data } = await axios.put(
+        "https://ecommerce.routemisr.com/api/v1/auth/resetPassword",
+        {
+          email: values.email,
+          newPassword: values.newPassword,
+          resetCode: resetCode, // ✅ Send resetCode with request
+        }
+      );
+
+      console.log("API Response:", data);
+
+      if (data.statusMsg === "success") { 
+        localStorage.removeItem("resetCode"); // ✅ Remove resetCode after successful reset  
+        navigate("/login");
+      } else {
+        setErrMessage("Password reset failed. Try again.");
+      }
+    } catch (err) {
+      console.error("API Error:", err.response?.data || err.message);
+      setErrMessage(err.response?.data?.message || "Something went wrong");
+    } finally {
+      setIsLoading(false);
+    }
+  }
+
+  const validationSchema = Yup.object({  
+    email: Yup.string().required("Email is required").email("Invalid email"),
+    newPassword: Yup.string()
+      .required("Password is required")
+      .matches(
+        /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
+        "Password must be 8+ characters with a letter, number, and special character."
+      ),
+  });
+
+  const { values, handleChange, handleSubmit, errors, touched, handleBlur } = useFormik({
+    initialValues,
+    onSubmit,
+    validationSchema,
+  });
+
+  return (
+    <div className="mt-4">
+      <form onSubmit={handleSubmit}>
+        <div className="lg:w-2/3 m-auto grid md:grid-cols-2 gap-4">
+          <h1 className='text-2xl font-bold'>Update Your Password</h1>
+
+          <Input 
+            isInvalid={touched.email && errors.email} 
+            errorMessage={errors.email} 
+            name='email' 
+            value={values.email} 
+            onChange={handleChange} 
+            onBlur={handleBlur} 
+            className='md:col-span-2 w-full'  
+            variant='faded' 
+            label="Email" 
+            type="email" 
+          />
+
+          <Input 
+            isInvalid={touched.newPassword && errors.newPassword} 
+            errorMessage={errors.newPassword} 
+            name='newPassword' 
+            value={values.newPassword} 
+            onChange={handleChange} 
+            onBlur={handleBlur} 
+            className='md:col-span-2 w-full'  
+            variant='faded' 
+            label="New Password" 
+            type="password" 
+          />
+          
+          <Button 
+            disabled={isLoading} 
+            isLoading={isLoading} 
+            type='submit' 
+            className='my-2 md:col-span-2' 
+            color="primary"
+          >
+            Update Your Password
+          </Button>       
+
+          {errMessage && <p className='text-red-500 text-small'>{errMessage}</p>}
+        </div>
+      </form>
+    </div>
+  );
+}

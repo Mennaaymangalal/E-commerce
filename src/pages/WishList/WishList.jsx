@@ -39,7 +39,7 @@ export default function WishList() {
     );
     localStorage.setItem(`wishlist-${productId}`, "false");
     await refetch();   
-     setRemovingProductId(null);
+    setRemovingProductId(null);
   }
 
  

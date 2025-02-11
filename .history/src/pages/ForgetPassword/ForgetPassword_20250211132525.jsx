@@ -1,0 +1,67 @@
+import React from 'react'
+import React, { useContext, useState } from 'react'
+import {Input} from "@heroui/react";
+import {Button} from "@heroui/react";
+import { Formik, useFormik } from 'formik';
+import * as Yup from "yup"
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import { authContext } from '../../Contexts/AuthContext/AuthContextProvider';
+
+export default function ForgetPassword() {
+      const [isLoading , setIsLoading] = useState(false)
+      const [errMessage , setErrMessage] = useState("")
+      const navigate = useNavigate()
+
+      const initialValues =  {   
+        email :"",
+        password :"",   
+      }
+    
+      function signup(){
+        navigate("/register");
+      }
+    
+      function forgetpassword(){
+        navigate("/forgetPassword");
+      }
+     const {setIsLogedIn} = useContext(authContext)
+    
+      function onSubmit(values){
+        setIsLoading(true)
+       axios.post("https://ecommerce.routemisr.com/api/v1/auth/signin",values)
+       .then(({data})=> {
+           if(data.message == "success"){       
+            setIsLogedIn(true)
+            localStorage.setItem("token" , data.token)        
+            navigate("/")
+           }
+       })
+       .catch((err)=>{
+        setErrMessage(err.response.data.message)
+       })
+       .finally(()=>{
+        setIsLoading(false)
+       })    
+      }
+      
+      const validationSchema = Yup.object({
+      
+       email: Yup.string().required("Email is required").email("Invalid email"),
+       password: Yup.string().required("Password is required").matches(/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/ ,"Password must be 8+ characters with a letter, number, and special character."),
+       
+      }) 
+    
+      const {values , handleChange , handleSubmit , errors , touched ,handleBlur} =useFormik({
+        initialValues,
+        onSubmit,
+        validationSchema,
+      })
+    
+      
+  return (
+    <>
+      
+    </>
+  )
+}
