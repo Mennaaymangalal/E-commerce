@@ -75,7 +75,7 @@ export default function Login() {
     </Button>   
     {errMessage && <p className='text-red-500 text-small'>{errMessage}  </p>}
     </div>
-     <div className=" flex md:flex-row justify-around align-middle pt-2">
+     <div className=" flex md:flex-row justify-around align-middle">
      
      <p className='text-sm'>Don't have an account? <a href='#' onClick={signup} className='text-blue-600 underline dark:text-blue-500 '>Signup</a></p>
      <a href='#' onClick={forgetpassword} className='  dark:text-white text-sm '> Forget Password?</a>
