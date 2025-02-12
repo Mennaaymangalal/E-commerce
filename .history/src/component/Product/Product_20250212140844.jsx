@@ -41,7 +41,7 @@ export default function Product({product , index}) {
   // };
    
 
-   const handleHeartClick = async (e) => {
+  export const handleHeartClick = async (e) => {
     e.stopPropagation(); // Prevent unwanted propagation
     e.preventDefault(); // Prevent default behavior (if inside a Link)
 

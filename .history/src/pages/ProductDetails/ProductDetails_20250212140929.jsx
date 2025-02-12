@@ -6,7 +6,6 @@ import Slider from "react-slick";
 import { Button } from '@heroui/react';
 import { formatCurrency } from '../../helpers/Currancy';
 import addProuctToCart from '../../Services/cartServices';
-import addProductWishlist from '../../Services/addProductWishlist';
 
 
 export default function ProductDetails() {  
@@ -109,7 +108,7 @@ export default function ProductDetails() {
               <Button isLoading={addToCartLoading}  onPress={()=>addProuctToCart(productDetails?._id , setAddToCartLoading)} className="bg-indigo-600 text-white px-6 py-2 rounded-md">
                 Add to Cart
               </Button>
-              <Button onPress={addProductWishlist(productDetails?._id)} className="bg-gray-200 text-gray-800 px-6 py-2 rounded-md">
+              <Button onPress={} className="bg-gray-200 text-gray-800 px-6 py-2 rounded-md">
                 Wishlist
               </Button>
             </div>
